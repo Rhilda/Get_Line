@@ -6,7 +6,7 @@
 /*   By: rhilda <rhilda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:45:15 by rhilda            #+#    #+#             */
-/*   Updated: 2020/11/19 16:53:40 by rhilda           ###   ########.fr       */
+/*   Updated: 2020/11/22 14:26:49 by rhilda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	int		s1_len;
 	int		s2_len;
 
-	free((char *)s1);
 	if (!(s1) && !(s2))
 		return (NULL);
 	else if (!(s1) || !(s2))
@@ -108,5 +107,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(newstr, s1, s1_len + 1);
 	ft_strlcat(newstr + (s1_len), s2, s2_len + 1);
+	free((char *)s1);
 	return (newstr);
 }
